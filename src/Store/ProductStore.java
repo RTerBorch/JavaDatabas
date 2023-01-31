@@ -52,12 +52,11 @@ public class ProductStore {
     }
 
 
-    public int generateOrderNr() {
-        Repository repository = new Repository();
+    public int generateOrderNr(List<Order> orderList) {
+
         boolean match = true;
         int orderNr = 1;
 
-        List<Order> orderList = repository.loadOrderList();
         ArrayList<Integer> orderNrList = new ArrayList<>();
 
         // Put in int orderId into separate list
@@ -72,7 +71,7 @@ public class ProductStore {
         return orderNr;
     }
 
-    public void shopItem(int choice, Customer activeCustomer, List<Product> productList) {
+    public void shopItem(int choice, Customer activeCustomer, List<Product> productList,List<Order> orderList) {
         // rowNr = choice
 
         List<Product> filteredList = productList.stream().filter(e -> e.getRowNr() == choice).toList();
@@ -99,7 +98,7 @@ public class ProductStore {
         }
 
         // Runs the order as many times as the chosen amount to purchase
-        int activeOrder = generateOrderNr();
+        int activeOrder = generateOrderNr(orderList);
         Repository repository = new Repository();
         System.out.println("You have registered " + amount + " " + chosenProduct.getProductName());
         for (int i = 0; i < amount; i++) {

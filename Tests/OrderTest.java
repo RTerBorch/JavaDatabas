@@ -35,7 +35,7 @@ public class OrderTest {
         // Set product rainboots
         product.setId(5);
 
-        int activeOrder = productStore.generateOrderNr();
+        int activeOrder = productStore.generateOrderNr(repository.loadOrderList());
         repository.callStoredProcedure("addtocart", activeOrder, customer, product);
 
 
@@ -55,7 +55,7 @@ public class OrderTest {
         productList.get(0).setRowNr(1);
 
         Customer activeCustomer = customerList.get(0);
-        productStore.shopItem(1, activeCustomer, productList);
+        productStore.shopItem(1, activeCustomer, productList,repository.loadOrderList());
 
         // Gör test på att rätt item blev sålt sedan.
 

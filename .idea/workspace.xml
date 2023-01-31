@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/hamcrest_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_j_8_0_31.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaDatabas.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/CustomerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/OrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/ProductTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/CustomerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Store/Formater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Store/PrintMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Store/ProductStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/settings.properties" afterDir="false" />
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="can place items into cart sucessfully. user can log in saves customer as active customer.">
+      <change afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/ProductStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/ProductStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -59,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/robin/Desktop/IntelliJ/Repository/JUnit repository/junit-4.13.2.jar",
+    "last_opened_file_path": "C:/Users/robin/Desktop/IntelliJ/FunktionellProgrammering",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -71,10 +55,18 @@
       <recent name="C:\Users\robin\Desktop\IntelliJ\JavaDatabas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in JavaDatabas">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JavaDatabas" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in JavaDatabas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaDatabas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,16 +89,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTest.testShopItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaDatabas" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OrderTest" />
-      <option name="METHOD_NAME" value="testShopItem" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ProductTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
@@ -118,11 +100,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in JavaDatabas" />
         <item itemvalue="JUnit.ProductTest" />
         <item itemvalue="JUnit.OrderTest" />
         <item itemvalue="JUnit.CustomerTest" />
-        <item itemvalue="JUnit.OrderTest.testShopItem" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -134,8 +116,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
-      <workItem from="1674988686747" duration="43737000" />
+      <workItem from="1674988686747" duration="57358000" />
     </task>
+    <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
+      <created>1675113216340</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1675113216340</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,5 +140,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="can place items into cart sucessfully. user can log in saves customer as active customer." />
+    <option name="LAST_COMMIT_MESSAGE" value="can place items into cart sucessfully. user can log in saves customer as active customer." />
   </component>
 </project>
