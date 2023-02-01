@@ -20,6 +20,7 @@ public class Customer {
     public Customer(int id, String firstName, String lastName, String address,
                     String district, String zipCode, String phoneNr, String eMail,
                     String customerPassWord) {
+
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,6 +31,8 @@ public class Customer {
         this.eMail = eMail;
         this.customerPassWord = customerPassWord;
     }
+
+
 
     public Boolean getLoggedIn() {
         return loggedIn;

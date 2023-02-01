@@ -24,13 +24,14 @@ public class Main {
         // Customer + Product list
         lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList());
 
-
         List<Customer> customerList = r.loadCustomerList();
         List<Product> productList = r.loadProductList();
         List<Order> orderList = r.loadOrderList();
 
         // Store Loop inte än
 
+
+        // TODO if admin, skip to staff screen ( admin in database customer? )
         System.out.println("Welcome to the Shoeshop! \nplease login");
         while (!loggedIn) {
             activeCustomer = customerHandler.logIn(lib.getCustomerList());
@@ -38,7 +39,6 @@ public class Main {
                 if (activeCustomer.getLoggedIn()) loggedIn = true;
             }
         }
-
 
         // Chose product to buy
         while (true) {
@@ -57,6 +57,7 @@ public class Main {
         // Uppdaterar lista
         lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList());
 
+        // stoppa in kunder i order
 
         orderList.forEach(order -> System.out.println(order.getCustomer().getFirstName()));
 

@@ -4,6 +4,9 @@ import java.sql.Timestamp;
 
 public class Order {
     protected int id;
+
+    protected int customerId;
+
     protected Customer customer;
 
     protected Timestamp purchaseDate;
@@ -14,9 +17,9 @@ public class Order {
 
     public Order(){}
 
-    public Order(int id, Customer customer) {
+    public Order(int id, int customerId) {
         this.id = id;
-        this.customer = customer;
+        this.customerId = customerId;
     }
 
     public Customer getCustomer() {
@@ -33,6 +36,14 @@ public class Order {
 
     public void setTest(Boolean test) {
         this.test = test;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public Timestamp getPurchaseDate() {

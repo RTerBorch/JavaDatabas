@@ -71,17 +71,17 @@ public class ProductStore {
         return orderNr;
     }
 
-    public void shopItem(int choice, Customer activeCustomer, List<Product> productList,List<Order> orderList) {
+    public void shopItem(int choice, Customer activeCustomer, List<Product> productList, List<Order> orderList) {
         // rowNr = choice
 
         List<Product> filteredList = productList.stream().filter(e -> e.getRowNr() == choice).toList();
-        System.out.println("Items: " + filteredList.size());
-
         Product chosenProduct = filteredList.get(0);
 
-        System.out.println(chosenProduct.getProductName() + " Size" + chosenProduct.getSize() + " Color:" + chosenProduct.getColor());
-        System.out.println("How many would you like to order? there is currently " + chosenProduct.getQuantity() + " left in stock.");
-
+        if (!test) {
+            System.out.println("Items: " + filteredList.size());
+            System.out.println(chosenProduct.getProductName() + " Size" + chosenProduct.getSize() + " Color:" + chosenProduct.getColor());
+            System.out.println("How many would you like to order? there is currently " + chosenProduct.getQuantity() + " left in stock.");
+        }
         int amount;
         while (true) {
 
@@ -100,7 +100,7 @@ public class ProductStore {
         // Runs the order as many times as the chosen amount to purchase
         int activeOrder = generateOrderNr(orderList);
         Repository repository = new Repository();
-        System.out.println("You have registered " + amount + " " + chosenProduct.getProductName());
+        if (!test) System.out.println("You have registered " + amount + " " + chosenProduct.getProductName());
         for (int i = 0; i < amount; i++) {
             repository.callStoredProcedure("addtocart", activeOrder, activeCustomer, chosenProduct);
         }
