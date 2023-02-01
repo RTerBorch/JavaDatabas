@@ -40,7 +40,8 @@ public class Repository {
         switch (type) {
             case "CUSTOMER" -> {
                 sqlString =
-                        "select id, firstName,customerPassWord,eMail from customer";
+                        "select id, firstName, lastName,address,district,zipCode," +
+                                "phoneNr, customerPassWord,eMail from customer";
                 customerList = new ArrayList<>();
             }
             case "PRODUCT" -> {
@@ -85,6 +86,21 @@ public class Repository {
                     String firstName = rs.getString("firstName");
                     customer.setFirstName(firstName);
 
+                    String lastName = rs.getString("lastName");
+                    customer.setLastName(lastName);
+
+                    String address = rs.getString("address");
+                    customer.setAddress(address);
+
+                    String district = rs.getString("district");
+                    customer.setDistrict(district);
+
+                    String zipCode = rs.getString("zipCode");
+                    customer.setZipCode(zipCode);
+
+                    String phoneNr = rs.getString("phoneNr");
+                    customer.setPhoneNr(phoneNr);
+
                     String customerPassWord = rs.getString("customerPassWord");
                     customer.setCustomerPassWord(customerPassWord);
 
@@ -128,7 +144,7 @@ public class Repository {
                     order.setId(id);
 
                     int customerId = rs.getInt("customerId");
-                    order.setCustomerId(customerId);
+                    order.setCustomerId(id);
 
                     Timestamp purchaseDate = rs.getTimestamp("purchaseDate");
                     order.setPurchaseDate(purchaseDate);
