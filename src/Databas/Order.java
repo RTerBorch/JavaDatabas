@@ -3,17 +3,13 @@ package Databas;
 import java.sql.Timestamp;
 
 public class Order {
-    protected int id;
+    private int id;
 
-    protected int customerId;
+    private int customerId;
 
-    protected Customer customer;
+    private Customer customer;
 
-    protected Timestamp purchaseDate;
-
-    private Boolean test = false;
-
-
+    private Timestamp purchaseDate;
 
     public Order(){}
 
@@ -28,14 +24,6 @@ public class Order {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public Boolean getTest() {
-        return test;
-    }
-
-    public void setTest(Boolean test) {
-        this.test = test;
     }
 
     public int getCustomerId() {

@@ -1,7 +1,4 @@
-import Databas.Customer;
-import Databas.Order;
-import Databas.Product;
-import Databas.Repository;
+import Databas.*;
 import Store.ProductStore;
 import org.junit.Test;
 
@@ -20,10 +17,19 @@ public class OrderTest {
         assert orderList.size() >= 1;
 
     }
+    @Test
+    public void cartListTest() {
+        Repository repository = new Repository();
+        List<Cart> cartList = new ArrayList<>();
+        assert cartList.size() == 0;
+        cartList = repository.loadCartList();
+        assert cartList.size() >= 1;
+
+    }
 
     @Test
     public void addToCartTest() {
-        ProductStore productStore = new ProductStore();
+        ProductStore productStore = new ProductStore(true);
         Repository repository = new Repository();
 
         Order order = new Order();
@@ -44,10 +50,8 @@ public class OrderTest {
     @Test
     public void testShopItem() {
 
-        ProductStore productStore = new ProductStore();
+        ProductStore productStore = new ProductStore(true);
         Repository repository = new Repository();
-
-        productStore.setTest(true);
 
         List<Product> productList = repository.loadProductList();
         List<Customer> customerList = repository.loadCustomerList();

@@ -13,7 +13,11 @@ public class ProductStore {
 
     Scanner scanner = new Scanner(System.in);
     private List<Product> filteredProductList;
-    private Boolean test = false;
+    private Boolean test;
+
+    public ProductStore(Boolean test) {
+        this.test = test;
+    }
 
     public Boolean getTest() {
         return test;

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="restructured alot, made a library for lists. working on updating a refresh function that also refresh order with customer.">
-      <change afterPath="$PROJECT_DIR$/Tests/LibraryTest.java" afterDir="false" />
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="Library is testable added functions to map customer into order.">
+      <change afterPath="$PROJECT_DIR$/src/Databas/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LibraryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/ProductTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Databas/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
@@ -57,11 +59,20 @@
       <recent name="C:\Users\robin\Desktop\IntelliJ\JavaDatabas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OrderTest">
+  <component name="RunManager" selected="JUnit.LibraryTest.testCustomerObjectToOrder">
     <configuration name="All in JavaDatabas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaDatabas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LibraryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -86,32 +97,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryTest.testRefreshList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProductTest.testCategoryLoading" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LibraryTest" />
-      <option name="METHOD_NAME" value="testRefreshList" />
+      <option name="MAIN_CLASS_NAME" value="ProductTest" />
+      <option name="METHOD_NAME" value="testCategoryLoading" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaDatabas" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OrderTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderTest" />
-        <item itemvalue="JUnit.All in JavaDatabas" />
         <item itemvalue="JUnit.LibraryTest.testCustomerObjectToOrder" />
         <item itemvalue="JUnit.LibraryTest.testMappingOfCustomerList" />
-        <item itemvalue="JUnit.LibraryTest.testRefreshList" />
+        <item itemvalue="JUnit.All in JavaDatabas" />
+        <item itemvalue="JUnit.ProductTest.testCategoryLoading" />
+        <item itemvalue="JUnit.LibraryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +125,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
-      <workItem from="1674988686747" duration="65772000" />
+      <workItem from="1674988686747" duration="76415000" />
     </task>
     <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
       <created>1675113216340</created>
@@ -137,7 +139,19 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1675205195871</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Library is testable added functions to map customer into order.">
+      <created>1675250929888</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1675250929888</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Library is testable added functions to map customer into order.">
+      <created>1675250937903</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1675250937903</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +171,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="can place items into cart sucessfully. user can log in saves customer as active customer." />
     <MESSAGE value="restructured alot, made a library for lists. working on updating a refresh function that also refresh order with customer." />
-    <option name="LAST_COMMIT_MESSAGE" value="restructured alot, made a library for lists. working on updating a refresh function that also refresh order with customer." />
+    <MESSAGE value="Library is testable added functions to map customer into order." />
+    <option name="LAST_COMMIT_MESSAGE" value="Library is testable added functions to map customer into order." />
   </component>
 </project>

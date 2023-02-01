@@ -1,3 +1,4 @@
+import Databas.Category;
 import Databas.CustomerHandler;
 import Databas.Product;
 import Databas.Repository;
@@ -11,20 +12,31 @@ public class ProductTest {
 
 
     @Test
-    public void testProductLoading(){
+    public void testProductLoading() {
         Repository repository = new Repository();
         List<Product> productList = new ArrayList<>();
         assert productList.size() == 0;
         productList = repository.loadProductList();
         assert productList.size() >= 1;
+
     }
 
     @Test
-    public void testRowNr(){
+    public void testCategoryLoading() {
+        Repository repository = new Repository();
+        List<Category> categoryList = new ArrayList<>();
+        assert categoryList.size() == 0;
+        categoryList = repository.loadCategoryList();
+        assert categoryList.size() >= 1;
+
+    }
+
+    @Test
+    public void testRowNr() {
         Repository repository = new Repository();
         List<Product> productList = repository.loadProductList();
 
-        ProductStore productStore = new ProductStore();
+        ProductStore productStore = new ProductStore(true);
         productStore.setTest(true);
         productStore.generateStore(productList);
 
@@ -32,14 +44,12 @@ public class ProductTest {
         assert productStore.getFilteredProductList().get(2).getRowNr() == 3;
 
         // Only products in stock
-        for (Product p : productStore.getFilteredProductList()){
+        for (Product p : productStore.getFilteredProductList()) {
             assert p.getQuantity() > 0;
         }
 
 
     }
-
-
 
 
 }

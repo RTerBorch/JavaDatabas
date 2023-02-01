@@ -9,10 +9,23 @@ public class Repository {
 
     private List<Product> productList;
     private List<Customer> customerList;
-
     private List<Order> orderList;
+    private List<Cart> cartList;
+    private List<Category> categoryList;
 
     final Properties p = new Properties();
+
+
+
+    public List<Category> loadCategoryList(){
+        generateListFor("CATEGORY");
+        return categoryList;
+    }
+
+    public List<Cart> loadCartList() {
+        generateListFor("CART");
+        return cartList;
+    }
 
 
     public List<Order> loadOrderList() {
@@ -56,9 +69,17 @@ public class Repository {
                         "select orders.id, customerId, purchaseDate from orders";
                 orderList = new ArrayList<>();
             }
-
+            case "CART" -> {
+                sqlString =
+                        "select cart.id, orderId, productId from cart";
+                cartList = new ArrayList<>();
+            }
+            case "CATEGORY" -> {
+                sqlString =
+                        "select categoryMapping.id, productId, category from categoryMapping join category on categoryId = category.id";
+                categoryList = new ArrayList<>();
+            }
         }
-
 
         try {
             p.load(new FileInputStream("src/settings.properties"));
@@ -151,10 +172,33 @@ public class Repository {
 
                     orderList.add(order);
                 }
+                if (type.equals("CART")) {
+                    Cart cart = new Cart();
+                    int id = rs.getInt("id");
+                    cart.setId(id);
 
+                    int orderId = rs.getInt("orderId");
+                    cart.setOrderId(orderId);
 
+                    int productId = rs.getInt("productId");
+                    cart.setProductId(productId);
+
+                    cartList.add(cart);
+                }
+                if (type.equals("CATEGORY")) {
+                    Category category = new Category();
+                    int id = rs.getInt("id");
+                    category.setId(id);
+
+                    int productId = rs.getInt("productId");
+                    category.setProductId(productId);
+
+                    String categoryName = rs.getString("category");
+                    category.setCategoryName(categoryName);
+
+                    categoryList.add(category);
+                }
             }
-
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

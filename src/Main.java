@@ -18,11 +18,11 @@ public class Main {
         Formater formater = new Formater();
         Repository r = new Repository();
         CustomerHandler customerHandler = new CustomerHandler();
-        ProductStore productStore = new ProductStore();
+        ProductStore productStore = new ProductStore(false);
         PrintMessage printMessage = new PrintMessage();
 
         // Customer + Product list
-        lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList());
+        lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(),r.loadCartList(),r.loadCategoryList());
 
         List<Customer> customerList = r.loadCustomerList();
         List<Product> productList = r.loadProductList();
@@ -44,7 +44,7 @@ public class Main {
         while (true) {
             // Refresh all lists +
             // Produce customer store items
-            lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList());
+            lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(),r.loadCartList(),r.loadCategoryList());
             productStore.generateStore(lib.getProductList());
 
             System.out.println("Chose product (press 0 to exit)");
@@ -55,18 +55,32 @@ public class Main {
         }
 
         // Uppdaterar lista
-        lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList());
+        lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(),r.loadCartList(),r.loadCategoryList());
 
         // stoppa in kunder i order
 
         orderList.forEach(order -> System.out.println(order.getCustomer().getFirstName()));
 
+        // TODO LÄGGA TILL KATEGORI TILL PRODUKT?
 
         //TODO
         // Between every update/cart etc list need to be retrieved from database
 
         // TODO
-        // If there is time, remove test orders
+
+        // En rapport som listar alla kunder, med namn och adress, som har handlat varor i en viss
+        //storlek, av en viss färg eller av ett visst märke.
+
+        //2. En rapport som listar alla kunder och hur många ordrar varje kund har lagt. Skriv ut namn
+        //och sammanlagda antalet ordrar för varje kund.
+
+        //3. En rapport som listar alla kunder och hur mycket pengar varje kund, sammanlagt, har
+        //beställt för. Skriv ut varje kunds namn och summa.
+
+        //4. En rapport som listar beställningsvärde per ort. Skriv ut orternas namn och summa.
+
+        //5. En topplista över de mest sålda produkterna som listar varje modell och hur många ex som
+        //har sålts av den modellen. Skriv ut namn på modellen och hur många ex som sålts.
 
 
     }
