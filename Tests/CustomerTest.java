@@ -1,9 +1,14 @@
 import Databas.Customer;
 import Databas.CustomerHandler;
+import Databas.Order;
 import Databas.Repository;
 import org.junit.Test;
 
+import java.util.List;
+
 public class CustomerTest {
+
+
 
     @Test
     public void testCustomerLogIn() {

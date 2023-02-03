@@ -165,7 +165,7 @@ public class Repository {
                     order.setId(id);
 
                     int customerId = rs.getInt("customerId");
-                    order.setCustomerId(id);
+                    order.setCustomerId(customerId);
 
                     Timestamp purchaseDate = rs.getTimestamp("purchaseDate");
                     order.setPurchaseDate(purchaseDate);
@@ -240,16 +240,18 @@ public class Repository {
 
             if (procedure.equals("call AddToCart(?,?,?)")) {
                 callableStatement.setInt(1, customer.getId()); //cart customerId
-                callableStatement.setInt(2, orderId);//cart orderId
+                callableStatement.setInt(2, orderId);           //cart orderId
                 callableStatement.setInt(3, product.getId()); // cart productId
             }
 
 
             resultSet = callableStatement.executeQuery();
-            String errorMessage = "";
+
 
             /*
             Felhantering kolla upp hur det fungerar, behöver databasen en kolumn error?
+            String errorMessage = "";
+
             while(resultSet != null && resultSet.next()){
                 errorMessage = resultSet.getString("error");
             }

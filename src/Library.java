@@ -18,9 +18,10 @@ public class Library {
     private Map<Integer, Order> orderMap;
     private Map<Integer, Category> categoryMap;
 
+    private Map<Integer, Cart> cartMap;
 
 
-    public void refreshLists(List<Customer> customerList, List<Product> productList, List<Order> orderList,List<Cart> cartList, List<Category> categoryList) {
+    public void refreshLists(List<Customer> customerList, List<Product> productList, List<Order> orderList, List<Cart> cartList, List<Category> categoryList) {
         // Refresh all lists and add customer to the right order.
         setCustomerList(customerList);
         setProductList(productList);
@@ -28,80 +29,73 @@ public class Library {
         setCartList(cartList);
         setCategoryList(categoryList);
 
-        // Places customer object reference into order.
-        customerObjectToOrder();
-
-        // Mapping for Category
-        productObjectToCategory();
-
-        // Mapping for cart
-        productObjectToCart();
-        orderObjectToCart();
+        // Placing objects where referred by a FK
+        FkObjectIntoClass();
     }
 
-        private void customerObjectToOrder(){
+    private void FkObjectIntoClass() {
 
-        setCustomerMap(mapCustomerList(this.customerList));
+        mapCustomerList(this.customerList);
+        mapCategoryList(this.categoryList);
+        mapProductList(this.productList);
+        mapOrderList(this.orderList);
+        mapCartList(this.cartList);
+
 
         this.orderList.forEach(order -> {
             order.setCustomer(getCustomerMap().get(order.getCustomerId()));
         });
-
-    }
-
-    private void orderObjectToCart(){
-        setOrderMap(mapOrderList(this.orderList));
-
-        this.cartList.forEach(cart -> {
-            cart.setOrder(getOrderMap().get(cart.getOrderId()));
-
-        });
-
-    }
-
-    private void productObjectToCart(){
-        setProductMap(mapProductList(this.productList));
-
-        this.cartList.forEach(cart -> {
-            cart.setProduct(getProductMap().get(cart.getProductId()));
-        });
-
-    }
-
-    private void productObjectToCategory(){
-        setProductMap(mapProductList(this.productList));
-
         this.categoryList.forEach(category -> {
             category.setProduct(getProductMap().get(category.getProductId()));
         });
+        this.cartList.forEach(cart -> {
+            cart.setProduct(getProductMap().get(cart.getProductId()));
+        });
+        this.cartList.forEach(cart -> {
+            cart.setOrder(getOrderMap().get(cart.getOrderId()));
+        });
 
     }
 
-
-        private Map<Integer, Customer> mapCustomerList(List<Customer> customerList){
+    private void mapCustomerList(List<Customer> customerList) {
         Map<Integer, Customer> map = new HashMap<>();
-        for (Customer customer : customerList){
-            map.put(customer.getId(), customer);
-        }
-        return map;
+        customerList.forEach(c->map.put(c.getId(),c));
+        setCustomerMap(map);
+
     }
-
-
-    private Map<Integer, Order> mapOrderList(List<Order> orderList){
+    private void mapOrderList(List<Order> orderList) {
         Map<Integer, Order> map = new HashMap<>();
-        for (Order order : orderList){
-            map.put(order.getId(), order);
-        }
-        return map;
+        orderList.forEach(o-> map.put(o.getId(), o));
+        setOrderMap(map);
+
     }
-    private Map<Integer, Product> mapProductList(List<Product> productList){
+    private void mapProductList(List<Product> productList) {
         Map<Integer, Product> map = new HashMap<>();
-        for (Product product : productList){
-            map.put(product.getId(), product);
-        }
-        return map;
+        productList.forEach(p->map.put(p.getId(),p));
+        setProductMap(map);
+
+    }
+    private void mapCartList(List<Cart> cartList) {
+        Map<Integer, Cart> map = new HashMap<>();
+        cartList.forEach(c->map.put(c.getId(),c));
+        setCartMap(map);
+
     }
 
+    private void mapCategoryList(List<Category> categoryList) {
+        Map<Integer, Category> map = new HashMap<>();
+       categoryList.forEach(c->map.put(c.getId(),c));
+        setCategoryMap(map);
+
+    }
+
+    public Map<Integer, Cart> getCartMap() {
+        return cartMap;
+    }
+
+    public void setCartMap(Map<Integer, Cart> cartMap) {
+        this.cartMap = cartMap;
+    }
 
     public List<Category> getCategoryList() {
         return categoryList;

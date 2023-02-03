@@ -2,8 +2,6 @@ package Databas;
 
 public class Category {
 
-    // TODO TESTAR STRINGA CATEGORY PÅ EN GÅNG I REPOSITORY DÅ DEN ÄR SÅ LITEN TABELL
-
     private int id;
     private String categoryName;
     private  int productId;

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="Library is testable added functions to map customer into order.">
-      <change afterPath="$PROJECT_DIR$/src/Databas/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/Category.java" afterDir="false" />
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/CustomerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LibraryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/ProductTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -47,7 +45,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/robin/Desktop/IntelliJ/FunktionellProgrammering",
+    "last_opened_file_path": "C:/Users/robin/Desktop/IntelliJ/JavaDatabas",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -59,11 +57,37 @@
       <recent name="C:\Users\robin\Desktop\IntelliJ\JavaDatabas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LibraryTest.testCustomerObjectToOrder">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="JavaDatabas" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in JavaDatabas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaDatabas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CustomerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerTest.testRightMapping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaDatabas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CustomerTest" />
+      <option name="METHOD_NAME" value="testRightMapping" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -77,42 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryTest.testCustomerObjectToOrder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaDatabas" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LibraryTest" />
-      <option name="METHOD_NAME" value="testCustomerObjectToOrder" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibraryTest.testMappingOfCustomerList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaDatabas" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LibraryTest" />
-      <option name="METHOD_NAME" value="testMappingOfCustomerList" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProductTest.testCategoryLoading" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaDatabas" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductTest" />
-      <option name="METHOD_NAME" value="testCategoryLoading" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LibraryTest.testCustomerObjectToOrder" />
-        <item itemvalue="JUnit.LibraryTest.testMappingOfCustomerList" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.CustomerTest" />
+        <item itemvalue="JUnit.CustomerTest.testRightMapping" />
         <item itemvalue="JUnit.All in JavaDatabas" />
-        <item itemvalue="JUnit.ProductTest.testCategoryLoading" />
         <item itemvalue="JUnit.LibraryTest" />
       </list>
     </recent_temporary>
@@ -125,7 +119,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
-      <workItem from="1674988686747" duration="76415000" />
+      <workItem from="1674988686747" duration="81260000" />
+      <workItem from="1675325346296" duration="37657000" />
     </task>
     <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
       <created>1675113216340</created>
@@ -151,7 +146,13 @@
       <option name="presentableId" value="LOCAL−00004" />
       <updated>1675250937903</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL−00005" summary="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these.">
+      <created>1675266075280</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1675266075280</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +173,7 @@
     <MESSAGE value="can place items into cart sucessfully. user can log in saves customer as active customer." />
     <MESSAGE value="restructured alot, made a library for lists. working on updating a refresh function that also refresh order with customer." />
     <MESSAGE value="Library is testable added functions to map customer into order." />
-    <option name="LAST_COMMIT_MESSAGE" value="Library is testable added functions to map customer into order." />
+    <MESSAGE value="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these." />
+    <option name="LAST_COMMIT_MESSAGE" value="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these." />
   </component>
 </project>

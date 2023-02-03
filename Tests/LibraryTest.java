@@ -34,6 +34,8 @@ public class LibraryTest {
         assert library.getCartList().size() == 1;
         assert library.getCategoryList().size() == 1;
 
+
+
     }
 
 
@@ -117,11 +119,6 @@ public class LibraryTest {
 
         assert cartL.get(0).getProduct().getPrice() == 200;
         assert cartL.get(0).getProduct().getQuantity() == 10;
-
-
-        System.out.println(cartL.get(0).getProduct().getProductName());
-        System.out.println(cartL.get(0).getOrder().getCustomer().getFirstName());
-
 
     }
 

@@ -5,6 +5,7 @@ import Databas.Order;
 import Databas.Product;
 import Databas.Repository;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -40,6 +41,8 @@ public class ProductStore {
     public void generateStore(List<Product> productList) {
         Formater formater = new Formater();
 
+
+        // Generate rowNr for everyProduct that's not their databaseId. Skip items with 0 in stock.
         final int[] rowNr = {1};
         filteredProductList = productList.stream().filter(e -> e.getQuantity() > 0).toList();
         filteredProductList.forEach(p -> p.setRowNr(rowNr[0]++));
@@ -61,15 +64,20 @@ public class ProductStore {
         boolean match = true;
         int orderNr = 1;
 
-        ArrayList<Integer> orderNrList = new ArrayList<>();
+        ArrayList<Integer> NewListOfOrderNr = new ArrayList<>();
 
         // Put in int orderId into separate list
-        orderList.forEach(order -> orderNrList.add(order.getId()));
+        orderList.forEach(order -> NewListOfOrderNr.add(order.getId()));
 
         // Searching for orderNr match, if not found, this will be our new orderNr.
         while (match) {
-            match = orderNrList.contains(orderNr);
-            orderNr++;
+            match = NewListOfOrderNr.contains(orderNr);
+            if (match) {
+                orderNr++;
+            }
+            if (!match) {
+                System.out.println("gen order nr Sista nr är " + orderNr);
+            }
         }
 
         return orderNr;
@@ -78,21 +86,23 @@ public class ProductStore {
     public void shopItem(int choice, Customer activeCustomer, List<Product> productList, List<Order> orderList) {
         // rowNr = choice
 
+        // Filter item from productList where chosen item then get this item as chosenProduct.
         List<Product> filteredList = productList.stream().filter(e -> e.getRowNr() == choice).toList();
         Product chosenProduct = filteredList.get(0);
 
-        if (!test) {
-            System.out.println("Items: " + filteredList.size());
+        if (!test) { // If not test, ask how many to buy
             System.out.println(chosenProduct.getProductName() + " Size" + chosenProduct.getSize() + " Color:" + chosenProduct.getColor());
             System.out.println("How many would you like to order? there is currently " + chosenProduct.getQuantity() + " left in stock.");
         }
-        int amount;
+        int orderAmount;
         while (true) {
 
-            if (test) amount = 5;
-            else amount = scanner.nextInt();
+            // If order amount is wrong the customer must write another amount.
 
-            if (amount <= chosenProduct.getQuantity() && amount >= 1) {
+            if (test) orderAmount = 5;
+            else orderAmount = scanner.nextInt();
+
+            if (orderAmount <= chosenProduct.getQuantity() && orderAmount >= 1) {
                 break;
             } else {
                 System.out.println("You have registered the wrong amount of items.");
@@ -101,12 +111,14 @@ public class ProductStore {
             if (test) break;
         }
 
+
         // Runs the order as many times as the chosen amount to purchase
-        int activeOrder = generateOrderNr(orderList);
+        int ActiveOrderNr = generateOrderNr(orderList);
         Repository repository = new Repository();
-        if (!test) System.out.println("You have registered " + amount + " " + chosenProduct.getProductName());
-        for (int i = 0; i < amount; i++) {
-            repository.callStoredProcedure("addtocart", activeOrder, activeCustomer, chosenProduct);
+        if (!test) System.out.println("You have registered " + orderAmount + " " + chosenProduct.getProductName());
+        for (int i = 0; i < orderAmount; i++) {
+            // AddToCart
+            repository.callStoredProcedure("addtocart", ActiveOrderNr, activeCustomer, chosenProduct);
         }
 
 
