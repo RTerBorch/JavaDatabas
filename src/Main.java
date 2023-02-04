@@ -25,8 +25,16 @@ public class Main {
         ProductStore productStore = new ProductStore(false);
 
 
+
+
+
+
+
         // Customer + Product list
         lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(), r.loadCartList(), r.loadCategoryList());
+
+
+
 
 
         System.out.println("Welcome to the Shoeshop! \nplease login");

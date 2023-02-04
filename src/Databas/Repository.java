@@ -7,6 +7,34 @@ import java.util.*;
 
 public class Repository {
 
+    private Loadable<Cart> cartLoader = new CartLoader();
+    private Loadable<Category> categoryLoader = new CategoryLoader();
+    private Loadable<Customer> customerLoader = new CustomerLoader();
+    private Loadable<Order> orderLoader = new OrderLoader();
+    private Loadable<Product> productLoader = new ProductLoader();
+
+
+    public List<Cart> loadCartList() {
+        return cartLoader.load();
+    }
+
+    public List<Category> loadCategoryList() {
+        return categoryLoader.load();
+    }
+
+
+    public List<Customer> loadCustomerList() {
+        return customerLoader.load();
+    }
+
+    public List<Order> loadOrderList() {
+        return orderLoader.load();
+    }
+
+    public List<Product> loadProductList() {
+        return productLoader.load();
+    }
+
     private List<Product> productList;
     private List<Customer> customerList;
     private List<Order> orderList;
@@ -15,33 +43,10 @@ public class Repository {
 
     final Properties p = new Properties();
 
-
-
-    public List<Category> loadCategoryList(){
-        generateListFor("CATEGORY");
-        return categoryList;
+    public <T> List<T> loadData(Loadable<T> loader){
+        return loader.load();
     }
 
-    public List<Cart> loadCartList() {
-        generateListFor("CART");
-        return cartList;
-    }
-
-
-    public List<Order> loadOrderList() {
-        generateListFor("ORDER");
-        return orderList;
-    }
-
-    public List<Customer> loadCustomerList() {
-        generateListFor("CUSTOMER");
-        return customerList;
-    }
-
-    public List<Product> loadProductList() {
-        generateListFor("PRODUCT");
-        return productList;
-    }
 
 
     // Collects all customers into list.

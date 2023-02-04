@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="started solving some of the tasks. 2/5. Need to use Highclass citizen etc">
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method">
+      <change afterPath="$PROJECT_DIR$/Tests/LoaderTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/CartLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/CategoryLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/CustomerLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/Loadable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/OrderLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/ProductLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +58,7 @@
       <recent name="C:\Users\robin\Desktop\IntelliJ\JavaDatabas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LibraryTest.testRefreshList">
+  <component name="RunManager" selected="JUnit.LoaderTests.doesTheCartListGetFilled">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JavaDatabas" />
@@ -66,30 +74,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoaderTests.doesTheCartListGetFilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CustomerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerTest.testRightMapping" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JavaDatabas" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CustomerTest" />
-      <option name="METHOD_NAME" value="testRightMapping" />
+      <option name="MAIN_CLASS_NAME" value="LoaderTests" />
+      <option name="METHOD_NAME" value="doesTheCartListGetFilled" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryTest.testRefreshList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LoaderTests.doesTheCategoryListGetFilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LibraryTest" />
-      <option name="METHOD_NAME" value="testRefreshList" />
+      <option name="MAIN_CLASS_NAME" value="LoaderTests" />
+      <option name="METHOD_NAME" value="doesTheCategoryListGetFilled" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoaderTests.doesTheListGetFilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JavaDatabas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LoaderTests" />
+      <option name="METHOD_NAME" value="doesTheListGetFilled" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -97,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LibraryTest.testRefreshList" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CustomerTest" />
-        <item itemvalue="JUnit.CustomerTest.testRightMapping" />
+        <item itemvalue="JUnit.LoaderTests.doesTheCartListGetFilled" />
+        <item itemvalue="JUnit.LoaderTests.doesTheCategoryListGetFilled" />
         <item itemvalue="JUnit.All in JavaDatabas" />
+        <item itemvalue="JUnit.LoaderTests.doesTheListGetFilled" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -114,7 +123,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
       <workItem from="1674988686747" duration="81260000" />
-      <workItem from="1675325346296" duration="43684000" />
+      <workItem from="1675325346296" duration="49086000" />
     </task>
     <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
       <created>1675113216340</created>
@@ -152,7 +161,13 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1675438329085</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method">
+      <created>1675540335925</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1675540335925</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +190,7 @@
     <MESSAGE value="Library is testable added functions to map customer into order." />
     <MESSAGE value="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these." />
     <MESSAGE value="started solving some of the tasks. 2/5. Need to use Highclass citizen etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="started solving some of the tasks. 2/5. Need to use Highclass citizen etc" />
+    <MESSAGE value="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method" />
+    <option name="LAST_COMMIT_MESSAGE" value="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method" />
   </component>
 </project>
