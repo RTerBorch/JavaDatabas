@@ -58,12 +58,28 @@ public class Main {
             lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(), r.loadCartList(), r.loadCategoryList());
         }
 
+        // TODO Lägg till felhantering i addToCart!! G - sidan
+
+        // TODO FUNKTIONSGRÄNSSNITT ÄVEN FÖR G OCH HÖGRE ORDNINGEN
+
+        // TODO Gränssnitt, formatera text. Använd detta för kund butiken även.
+
+
+
         // TODO VÄLJ RAPPORT MED METOD
+        /* // TODO DETTA:
+        I ditt huvudprogram, låt användaren välja vilken rapport som ska visas (detta kan göras genom att
+                låta hen välja ett tal 1-5). Om användaren väljer 1 kan du be om en ytterligare inmatning där
+        användaren får ange om hen vill söka på färg, storlek eller märke, och sedan värdet på storleken,
+        färgen eller märket hen vill söka fram.
+
+         */
 
         // En rapport som listar alla kunder, med namn och adress, som har handlat varor i en viss
         // storlek, av en viss färg eller av ett visst märke.
 
         // TODO GÖR DENNA I METOD OCH MED INTERFACE / HÖGRE ORDNING
+        System.out.println("UPPGIFT 1");
 
         List<Cart> filterList;
         filterList = lib.getCartList().stream().filter(cart -> cart.getProduct().getSize().equals("39")).toList();
@@ -77,6 +93,15 @@ public class Main {
         //2. En rapport som listar alla kunder och hur många ordrar varje kund har lagt. Skriv ut namn
         //och sammanlagda antalet ordrar för varje kund.
 
+        System.out.println("UPPGIFT 2");
+        List<Order> filterListOrder = lib.getOrderList();
+
+        Map<Integer, Long> countForCustomerId = filterListOrder.stream()
+                .collect(Collectors.groupingBy(Order::getCustomerId, Collectors.counting()));
+
+        System.out.println("KEY SET " + countForCustomerId.keySet());
+        System.out.println(countForCustomerId);
+
 
         //3. En rapport som listar alla kunder och hur mycket pengar varje kund, sammanlagt, har
         //beställt för. Skriv ut varje kunds namn och summa.
@@ -88,17 +113,8 @@ public class Main {
 
 
         // Så många som sålts av en produkt
+        System.out.println("UPPGIFT 5");
         filterList = lib.getCartList();
-        filterList = filterList.stream().filter(c -> c.getProductId() == 8).toList();
-
-        System.out.println(filterList.size());
-        filterList.forEach(cart -> System.out.println(cart.getProductId()));
-
-
-        filterList = lib.getCartList();
-
-      //  List<Thing> objects = new ArrayList<>(); // initalise as in the question
-
 
         // TODO LÖSNINGEN!! ANTALET SÅLDA PER CART
 
@@ -109,23 +125,7 @@ public class Main {
         System.out.println(countForProductId);
 
 
-                /*
-        System.out.println("Test " + filterList.stream().mapToInt(Cart::getProductId).count());
 
-        IntSummaryStatistics statistics = filterList.stream()
-                .mapToInt(Cart::getProductId)
-                .summaryStatistics();
-
-        int min = statistics.getMin();
-        long count = statistics.getSum();
-        int max = statistics.getMax();
-
-        System.out.println(min + " " + count + " " + max);
-
-        long newStream = filterList.stream().map(Cart::getProductId).distinct().count();
-        System.out.println(newStream);
-
-                 */
 
     }
 }

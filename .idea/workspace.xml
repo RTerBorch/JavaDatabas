@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these.">
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="started solving some of the tasks. 2/5. Need to use Highclass citizen etc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/CustomerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LibraryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/ProductStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/ProductStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +38,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/robin/Desktop/IntelliJ/JavaDatabas",
+    "last_opened_file_path": "C:/Users/robin/Desktop/IntelliJ/FunktionellProgrammering",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -57,7 +50,7 @@
       <recent name="C:\Users\robin\Desktop\IntelliJ\JavaDatabas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.LibraryTest.testRefreshList">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JavaDatabas" />
@@ -92,22 +85,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibraryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibraryTest.testRefreshList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="LibraryTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testRefreshList" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibraryTest.testRefreshList" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CustomerTest" />
         <item itemvalue="JUnit.CustomerTest.testRightMapping" />
         <item itemvalue="JUnit.All in JavaDatabas" />
-        <item itemvalue="JUnit.LibraryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
       <workItem from="1674988686747" duration="81260000" />
-      <workItem from="1675325346296" duration="37657000" />
+      <workItem from="1675325346296" duration="43684000" />
     </task>
     <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
       <created>1675113216340</created>
@@ -152,7 +146,13 @@
       <option name="presentableId" value="LOCAL−00005" />
       <updated>1675266075280</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL−00006" summary="started solving some of the tasks. 2/5. Need to use Highclass citizen etc">
+      <created>1675438329085</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1675438329085</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +174,7 @@
     <MESSAGE value="restructured alot, made a library for lists. working on updating a refresh function that also refresh order with customer." />
     <MESSAGE value="Library is testable added functions to map customer into order." />
     <MESSAGE value="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these." />
-    <option name="LAST_COMMIT_MESSAGE" value="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these." />
+    <MESSAGE value="started solving some of the tasks. 2/5. Need to use Highclass citizen etc" />
+    <option name="LAST_COMMIT_MESSAGE" value="started solving some of the tasks. 2/5. Need to use Highclass citizen etc" />
   </component>
 </project>
