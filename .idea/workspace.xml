@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method">
-      <change afterPath="$PROJECT_DIR$/Tests/LoaderTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/CartLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/CategoryLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/CustomerLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/Loadable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/OrderLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Databas/ProductLoader.java" afterDir="false" />
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="added some interfaces to load in list. need to refactor repository. Cart and Category">
+      <change afterPath="$PROJECT_DIR$/Tests/StatisticsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/LoadItems/CustomerLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/LoadItems/DataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/LoadItems/OrderLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/LoadItems/ProductLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/StoredProcedures/Procedure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Databas/StoredProcedures/StoredProcedure.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/StatisticsSearcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Store/StatisticsStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/CustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/LoaderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LoaderTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/ProductTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/CartLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/LoadItems/CartLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/CategoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/LoadItems/CategoryLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/CustomerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/CustomerLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Loadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/LoadItems/Loadable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/OrderLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Databas/ProductLoader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Databas/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Store/ProductStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/ProductStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +78,7 @@
       <recent name="C:\Users\robin\Desktop\IntelliJ\JavaDatabas" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoaderTests.doesTheCartListGetFilled">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JavaDatabas" />
@@ -74,31 +94,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoaderTests.doesTheCartListGetFilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StatisticsTest.testNrFiveStatistics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoaderTests" />
-      <option name="METHOD_NAME" value="doesTheCartListGetFilled" />
+      <option name="MAIN_CLASS_NAME" value="StatisticsTest" />
+      <option name="METHOD_NAME" value="testNrFiveStatistics" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoaderTests.doesTheCategoryListGetFilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StatisticsTest.testNrTwoStatistics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoaderTests" />
-      <option name="METHOD_NAME" value="doesTheCategoryListGetFilled" />
+      <option name="MAIN_CLASS_NAME" value="StatisticsTest" />
+      <option name="METHOD_NAME" value="testNrTwoStatistics" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoaderTests.doesTheListGetFilled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StatisticsTest.testSizeStatistics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JavaDatabas" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="LoaderTests" />
-      <option name="METHOD_NAME" value="doesTheListGetFilled" />
+      <option name="MAIN_CLASS_NAME" value="StatisticsTest" />
+      <option name="METHOD_NAME" value="testSizeStatistics" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -106,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoaderTests.doesTheCartListGetFilled" />
-        <item itemvalue="JUnit.LoaderTests.doesTheCategoryListGetFilled" />
-        <item itemvalue="JUnit.All in JavaDatabas" />
-        <item itemvalue="JUnit.LoaderTests.doesTheListGetFilled" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.StatisticsTest.testNrFiveStatistics" />
+        <item itemvalue="JUnit.StatisticsTest.testNrTwoStatistics" />
+        <item itemvalue="JUnit.StatisticsTest.testSizeStatistics" />
+        <item itemvalue="JUnit.All in JavaDatabas" />
       </list>
     </recent_temporary>
   </component>
@@ -123,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
       <workItem from="1674988686747" duration="81260000" />
-      <workItem from="1675325346296" duration="49086000" />
+      <workItem from="1675325346296" duration="79063000" />
     </task>
     <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
       <created>1675113216340</created>
@@ -167,7 +187,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1675540335925</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="added some interfaces to load in list. need to refactor repository. Cart and Category">
+      <created>1675545728950</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1675545728950</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +217,7 @@
     <MESSAGE value="have added classes: cart,category&#10;&#10;have edited repository for classes: cart,category so that it can&#10;import from database.&#10;&#10;have editet library. Added lists for these classes.&#10;Mapped classes, and made method to add object to all the classes with foreignKey.&#10;&#10;Have added tests for these." />
     <MESSAGE value="started solving some of the tasks. 2/5. Need to use Highclass citizen etc" />
     <MESSAGE value="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method" />
-    <option name="LAST_COMMIT_MESSAGE" value="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method" />
+    <MESSAGE value="added some interfaces to load in list. need to refactor repository. Cart and Category" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some interfaces to load in list. need to refactor repository. Cart and Category" />
   </component>
 </project>

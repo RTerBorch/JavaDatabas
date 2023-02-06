@@ -1,6 +1,24 @@
 package Databas;
 
+import Store.Formater;
+
 public class Cart {
+
+    Formater formater = new Formater();
+
+    public String customerData() {
+
+        return "Customer: " + order.getCustomer().getFirstName() + " " +
+                order.getCustomer().getLastName() +
+                formater.alignProducts(order.getCustomer().getFirstName()+order.getCustomer().getLastName())
+                +"Adress: " + order.getCustomer().getAddress();
+    }
+
+    public String productData(){
+       return "Product: " + product.getProductName() + formater.alignProducts(product.getProductName()) + product.getBrand() + "/" + product.getColor() + "/" + product.getSize() +
+               formater.alignProducts(product.getBrand() + "/" + product.getColor() + "/" + product.getSize());
+
+    }
 
     private int id;
     private int orderId;

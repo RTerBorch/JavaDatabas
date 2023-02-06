@@ -1,7 +1,7 @@
 import Databas.Category;
-import Databas.CustomerHandler;
+import Databas.LoadItems.CategoryLoader;
+import Databas.LoadItems.ProductLoader;
 import Databas.Product;
-import Databas.Repository;
 import Store.ProductStore;
 import org.junit.Test;
 
@@ -13,31 +13,33 @@ public class ProductTest {
 
     @Test
     public void testProductLoading() {
-        Repository repository = new Repository();
+        ProductLoader pl = new ProductLoader();
+
         List<Product> productList = new ArrayList<>();
         assert productList.size() == 0;
-        productList = repository.loadProductList();
+        productList = pl.load();
         assert productList.size() >= 1;
 
     }
 
     @Test
     public void testCategoryLoading() {
-        Repository repository = new Repository();
+        CategoryLoader cl = new CategoryLoader();
+
         List<Category> categoryList = new ArrayList<>();
         assert categoryList.size() == 0;
-        categoryList = repository.loadCategoryList();
+        categoryList = cl.load();
         assert categoryList.size() >= 1;
 
     }
 
     @Test
     public void testRowNr() {
-        Repository repository = new Repository();
-        List<Product> productList = repository.loadProductList();
+        ProductLoader pl = new ProductLoader();
+
+        List<Product> productList = pl.load();
 
         ProductStore productStore = new ProductStore(true);
-        productStore.setTest(true);
         productStore.generateStore(productList);
 
         // Correct rowNr

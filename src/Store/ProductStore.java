@@ -3,9 +3,9 @@ package Store;
 import Databas.Customer;
 import Databas.Order;
 import Databas.Product;
-import Databas.Repository;
 
-import java.sql.SQLOutput;
+import Databas.StoredProcedures.StoredProcedure;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -113,12 +113,14 @@ public class ProductStore {
 
 
         // Runs the order as many times as the chosen amount to purchase
-        int ActiveOrderNr = generateOrderNr(orderList);
-        Repository repository = new Repository();
+        int activeOrderNr = generateOrderNr(orderList);
+
+        StoredProcedure sp = new StoredProcedure();
+
         if (!test) System.out.println("You have registered " + orderAmount + " " + chosenProduct.getProductName());
         for (int i = 0; i < orderAmount; i++) {
             // AddToCart
-            repository.callStoredProcedure("addtocart", ActiveOrderNr, activeCustomer, chosenProduct);
+            sp.addToCart(activeOrderNr,activeCustomer,chosenProduct);
         }
 
 

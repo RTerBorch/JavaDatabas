@@ -1,6 +1,12 @@
 package Databas;
 
+import Store.Formater;
+
 public class Product {
+
+    private int loadOrder;
+
+    Formater formater = new Formater();
 
     protected int id;
     protected String productName;
@@ -98,5 +104,19 @@ public class Product {
 
     public void setSize(String size) {
         this.size = size;
+    }
+
+    public String productData(){
+        return "Product: " + getProductName() + formater.alignProducts(getProductName()) + getBrand() + "/" + getColor() + "/" + getSize() +
+                formater.alignProducts(getBrand() + "/" + getColor() + "/" + getSize());
+
+    }
+
+    public int getLoadOrder() {
+        return loadOrder;
+    }
+
+    public void setLoadOrder(int loadOrder) {
+        this.loadOrder = loadOrder;
     }
 }

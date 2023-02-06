@@ -1,4 +1,6 @@
-package Databas;
+package Databas.LoadItems;
+
+import Databas.Cart;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,12 +10,11 @@ import java.util.List;
 import java.util.Properties;
 
 
-public class CategoryLoader implements Loadable<Category> {
+public class CartLoader implements Loadable<Cart> {
     final Properties p = new Properties();
-
     @Override
-    public List<Category> load() {
-        List<Category> categoryList = new ArrayList<>();
+    public List<Cart> load() {
+        List<Cart> cartList = new ArrayList<>();
 
         try {
             p.load(new FileInputStream("src/settings.properties"));
@@ -26,31 +27,20 @@ public class CategoryLoader implements Loadable<Category> {
                 p.getProperty("name"),
                 p.getProperty("password"));
              Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery("select categoryMapping.id, productId, category from categoryMapping join category on categoryId = category.id")) {
+             ResultSet rs = stmt.executeQuery("SELECT id, orderId, productId FROM cart")) {
 
             while (rs.next()) {
-
-
                 int id = rs.getInt("id");
+                int orderId = rs.getInt("orderId");
                 int productId = rs.getInt("productId");
-                String categoryName = rs.getString("category");
-
-                Category category = new Category(id, categoryName, productId);
-                categoryList.add(category);
-
+                Cart cart = new Cart(id, orderId, productId);
+                cartList.add(cart);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return categoryList;
+        return cartList;
     }
 }
-
-
-
-
-
-
-
 

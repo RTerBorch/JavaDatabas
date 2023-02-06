@@ -1,11 +1,14 @@
 package Databas;
 
+import Databas.LoadItems.*;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;
 import java.util.*;
 
 public class Repository {
+    /*
 
     private Loadable<Cart> cartLoader = new CartLoader();
     private Loadable<Category> categoryLoader = new CategoryLoader();
@@ -43,15 +46,13 @@ public class Repository {
 
     final Properties p = new Properties();
 
-    public <T> List<T> loadData(Loadable<T> loader){
+    public <T> List<T> loadData(Loadable<T> loader) {
         return loader.load();
     }
 
 
-
     // Collects all customers into list.
     private void generateListFor(String type) {
-
 
         String sqlString = "";
 
@@ -212,17 +213,7 @@ public class Repository {
     }
 
 
-    public void callStoredProcedure(String procedure, int orderId, Customer customer, Product product) {
-
-        // What procedure to call
-        procedure = procedure.toLowerCase();
-
-        // complete call string
-        switch (procedure) {
-            case "addtocart" -> {
-                procedure = "call AddToCart(?,?,?)";
-            }
-        }
+    public void addToCart(int orderId, Customer customer, Product product) {
 
 
         try {
@@ -241,18 +232,26 @@ public class Repository {
                     p.getProperty("password"));
 
 
-            CallableStatement callableStatement = connection.prepareCall(procedure);
-
-            if (procedure.equals("call AddToCart(?,?,?)")) {
-                callableStatement.setInt(1, customer.getId()); //cart customerId
-                callableStatement.setInt(2, orderId);           //cart orderId
-                callableStatement.setInt(3, product.getId()); // cart productId
-            }
+            CallableStatement callableStatement = connection.prepareCall("call AddToCart(?,?,?)");
+            callableStatement.setInt(1, customer.getId()); //cart customerId
+            callableStatement.setInt(2, orderId);           //cart orderId
+            callableStatement.setInt(3, product.getId()); // cart productId
 
 
             resultSet = callableStatement.executeQuery();
 
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+
+
+    }
+
+ */
+}
             /*
             Felhantering kolla upp hur det fungerar, behöver databasen en kolumn error?
             String errorMessage = "";
@@ -266,13 +265,3 @@ public class Repository {
 
            */
 
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-}

@@ -13,9 +13,10 @@ public class Order {
 
     public Order(){}
 
-    public Order(int id, int customerId) {
+    public Order(int id, int customerId, Timestamp purchaseDate) {
         this.id = id;
         this.customerId = customerId;
+        this.purchaseDate = getPurchaseDate();
     }
 
     public Customer getCustomer() {

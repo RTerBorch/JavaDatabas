@@ -1,10 +1,24 @@
+package Program;
+
 import Databas.*;
+import Databas.LoadItems.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Library {
+
+    DataLoader dl = new DataLoader();
+
+    CartLoader cartLoader = new CartLoader();
+    CategoryLoader categoryLoader = new CategoryLoader();
+    CustomerLoader customerLoader = new CustomerLoader();
+    OrderLoader orderLoader = new OrderLoader();
+    ProductLoader productLoader = new ProductLoader();
+
+
+
 
     private List<Customer> customerList;
     private List<Product> productList;
@@ -21,13 +35,13 @@ public class Library {
     private Map<Integer, Cart> cartMap;
 
 
-    public void refreshLists(List<Customer> customerList, List<Product> productList, List<Order> orderList, List<Cart> cartList, List<Category> categoryList) {
+    public void refreshLists() {
         // Refresh all lists and add customer to the right order.
-        setCustomerList(customerList);
-        setProductList(productList);
-        setOrderList(orderList);
-        setCartList(cartList);
-        setCategoryList(categoryList);
+        setCustomerList(customerLoader.load());
+        setProductList(productLoader.load());
+        setOrderList(orderLoader.load());
+        setCartList(cartLoader.load());
+        setCategoryList(categoryLoader.load());
 
         // Placing objects where referred by a FK
         FkObjectIntoClass();

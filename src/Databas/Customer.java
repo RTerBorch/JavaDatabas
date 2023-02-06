@@ -1,6 +1,9 @@
 package Databas;
 
+import Store.Formater;
+
 public class Customer {
+    Formater formater = new Formater();
     private Boolean test = false;
     private Boolean loggedIn = false;
 
@@ -121,4 +124,18 @@ public class Customer {
     public void setCustomerPassWord(String customerPassWord) {
         this.customerPassWord = customerPassWord;
     }
+
+
+    public String customerData() {
+
+        return "Customer: " + getFirstName() + " " +
+                getLastName() +
+                formater.alignProducts(getFirstName()+getLastName())
+                +"Adress: " + getAddress() +
+                formater.alignProducts(getAddress());
+    }
+
+
 }
+
+

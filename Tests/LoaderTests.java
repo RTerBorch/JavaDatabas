@@ -1,7 +1,8 @@
-import Databas.Cart;
-import Databas.CartLoader;
-import Databas.Category;
-import Databas.CategoryLoader;
+import Databas.*;
+import Databas.LoadItems.CartLoader;
+import Databas.LoadItems.CategoryLoader;
+import Databas.LoadItems.CustomerLoader;
+import Databas.LoadItems.DataLoader;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -11,42 +12,49 @@ public class LoaderTests {
 
 
     @Test
-    public void doesTheCartListGetFilled(){
+    public void doesTheCartListGetFilled() {
         List<Cart> cartList = new ArrayList<>();
         CartLoader cartLoader = new CartLoader();
-
-
-
 
         if (cartList == null) throw new AssertionError();
         cartList = cartLoader.load();
         assert cartList.size() > 0;
-        System.out.println(cartList.size());
 
-        cartList.forEach(c -> System.out.println(c.getId()));
-
-        }
-
+    }
 
     @Test
-    public void doesTheCategoryListGetFilled(){
+    public void doesTheCategoryListGetFilled() {
         List<Category> categoryList = new ArrayList<>();
         CategoryLoader categoryLoader = new CategoryLoader();
-
-
-
 
         if (categoryList == null) throw new AssertionError();
         categoryList = categoryLoader.load();
         assert categoryList.size() > 0;
-        System.out.println(categoryList.size());
+    }
 
-        categoryList.forEach(c -> System.out.println(c.getCategoryName()));
+    @Test
+    public void doesTheCustomerListGetFilled() {
+        List<Customer> customerList = new ArrayList<>();
+        CustomerLoader customerLoader = new CustomerLoader();
+
+        if (customerList == null) throw new AssertionError();
+        customerList = customerLoader.load();
+        assert customerList.size() > 0;
+    }
+
+    @Test
+    public void HigherFunctionDataLoaderTest(){
+        CustomerLoader cl = new CustomerLoader();
+        DataLoader dl = new DataLoader();
+
+        List<Customer> customerList = null;
+        customerList = dl.loadData(cl);
+        assert customerList.size() > 0;
+
+        customerList.forEach(c -> System.out.println(c.getFirstName()));
+
     }
 
 
-
-
-
-    }
+}
 

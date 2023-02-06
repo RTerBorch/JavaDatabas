@@ -1,55 +1,33 @@
 import Databas.*;
-import Store.Formater;
-import Store.PrintMessage;
+import Program.CustomerHandler;
+import Program.Library;
 import Store.ProductStore;
+import Store.StatisticsStore;
 
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Main {
 
-    public static void main(String[] args) {
-        boolean loggedIn = false;
-        Customer activeCustomer = new Customer();
-        Library lib = new Library();
 
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        Customer activeCustomer;
+        CustomerHandler cHandler = new CustomerHandler(false);
 
-        Repository r = new Repository();
-        CustomerHandler customerHandler = new CustomerHandler();
         ProductStore productStore = new ProductStore(false);
 
+        Library lib = new Library();
+
+        // Update/refresh data from dataBase
+        lib.refreshLists();
+
+        // Log in customer, return active customer
+        activeCustomer = cHandler.welcomeCustomer(lib.getCustomerList());
 
 
 
-
-
-
-        // Customer + Product list
-        lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(), r.loadCartList(), r.loadCategoryList());
-
-
-
-
-
-        System.out.println("Welcome to the Shoeshop! \nplease login");
-        while (!loggedIn) {
-
-            activeCustomer = customerHandler.logIn(lib.getCustomerList());
-            if (activeCustomer != null) {
-                if (activeCustomer.getLoggedIn()) loggedIn = true;
-                System.out.println("Welcome " + activeCustomer.getFirstName());
-            }
-        }
-
-        // Chose product to buy
         while (true) {
-
             // if test login, move skip this
             if (activeCustomer.getFirstName().equals("test")) {
                 break;
@@ -57,14 +35,38 @@ public class Main {
 
             // Shows customer product list, press 0 to exit
             productStore.generateStore(lib.getProductList());
+
+            // Chose what item to buy then place it in cart.
             System.out.println("Chose product (press 0 to exit)");
             int choice = scanner.nextInt();
             if (choice == 0) break;
-
-            //
             productStore.shopItem(choice, activeCustomer, lib.getProductList(), lib.getOrderList());
-            lib.refreshLists(r.loadCustomerList(), r.loadProductList(), r.loadOrderList(), r.loadCartList(), r.loadCategoryList());
+
+            // Update list after every purchase.
+            lib.refreshLists();
         }
+
+
+        if (activeCustomer.getFirstName().equals("test")){
+
+            System.out.println("What statistics would you like to run?");
+            System.out.println("1. List customers that purchased item based on size, color, brand?");
+            System.out.println("2. List how many orders every customer has placed.");
+
+            StatisticsStore statisticsStore = new StatisticsStore(false);
+            statisticsStore.runStatistics(scanner.nextInt());
+
+        }
+
+
+
+
+
+        }
+}
+
+
+        /*
 
         // TODO Lägg till felhantering i addToCart!! G - sidan
 
@@ -75,13 +77,13 @@ public class Main {
 
 
         // TODO VÄLJ RAPPORT MED METOD
-        /* // TODO DETTA:
+         // TODO DETTA:
         I ditt huvudprogram, låt användaren välja vilken rapport som ska visas (detta kan göras genom att
                 låta hen välja ett tal 1-5). Om användaren väljer 1 kan du be om en ytterligare inmatning där
         användaren får ange om hen vill söka på färg, storlek eller märke, och sedan värdet på storleken,
         färgen eller märket hen vill söka fram.
 
-         */
+
 
         // En rapport som listar alla kunder, med namn och adress, som har handlat varor i en viss
         // storlek, av en viss färg eller av ett visst märke.
@@ -134,6 +136,4 @@ public class Main {
 
 
 
-
-    }
-}
+  */

@@ -1,10 +1,19 @@
-package Databas;
+package Program;
+
+import Databas.Customer;
 
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerHandler {
     private Boolean test = false;
+    private Boolean loggedIn = false;
+
+    Customer activeCustomer;
+
+    public CustomerHandler(Boolean test) {
+        this.test = test;
+    }
 
     public Boolean getTest() {
         return test;
@@ -12,6 +21,45 @@ public class CustomerHandler {
 
     public void setTest(Boolean test) {
         this.test = test;
+    }
+
+    public Boolean getLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(Boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public Customer welcomeCustomer(List<Customer> customerList){
+
+      if(!test)  System.out.println("Welcome to the Shoeshop! \nplease login");
+        while (!loggedIn) {
+
+            activeCustomer = logIn(customerList);
+            if (activeCustomer != null) {
+                if (activeCustomer.getLoggedIn()) loggedIn = true;
+               if(!test) System.out.println("Welcome " + activeCustomer.getFirstName());
+            }
+        }
+
+        return activeCustomer;
     }
 
     public Customer logIn(List<Customer> customerList) {
@@ -22,7 +70,7 @@ public class CustomerHandler {
         boolean isCustomer = false;
 
         if (test) {
-            eMail = "robintb@gmail.com";
+            eMail = "testMail";
         } else {
             System.out.println("Enter your email: ");
             eMail = scanner.nextLine();
@@ -34,7 +82,7 @@ public class CustomerHandler {
                 isCustomer = true;
 
                 if (test) {
-                    password = "lösenord1";
+                    password = "testPass";
                 } else {
                     System.out.println("Enter password: ");
                     password = scanner.nextLine();
