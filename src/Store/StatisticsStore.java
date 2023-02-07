@@ -101,6 +101,7 @@ public class StatisticsStore {
                 Map<Integer, Long> countForProductId = cartList.stream()
                         .collect(Collectors.groupingBy(Cart::getProductId, Collectors.counting()));
 
+
                 List<Product> productList = lib.getProductList();
 
                 productList.sort(new Comparator<Product>() {

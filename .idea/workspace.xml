@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="Statistics work now, 3/5 tasks done. need to clean up a bit.">
+    <list default="true" id="751180bb-eaf4-4545-bde7-a12ed3b19ec4" name="Changes" comment="finished product. Will do the last rapports if i got time">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/CustomerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LibraryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/LoaderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/LoaderTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/OrderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/ProductTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/CartLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/CartLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/CategoryLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/CategoryLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/CustomerLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/CustomerLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/DataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/DataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/Loadable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/Loadable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/OrderLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/OrderLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/LoadItems/ProductLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/LoadItems/ProductLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/Repository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/StoredProcedures/Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/StoredProcedures/Procedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Databas/StoredProcedures/StoredProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/StoredProcedures/StoredProcedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/CustomerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/CustomerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Program/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Program/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/PrintMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/ProductStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/ProductStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Store/StatisticsSearcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/StatisticsSearcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/Repository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Store/StatisticsStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Store/StatisticsStore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674988685149</updated>
       <workItem from="1674988686747" duration="81260000" />
-      <workItem from="1675325346296" duration="89720000" />
+      <workItem from="1675325346296" duration="91303000" />
     </task>
     <task id="LOCAL−00001" summary="can place items into cart sucessfully. user can log in saves customer as active customer.">
       <created>1675113216340</created>
@@ -197,7 +172,13 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1675679794386</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="finished product. Will do the last rapports if i got time">
+      <created>1675759457172</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1675759457172</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +204,7 @@
     <MESSAGE value="started solving some of the tasks. 3/5. Going to refactor code and use more interface and hopefully Higher Order method" />
     <MESSAGE value="added some interfaces to load in list. need to refactor repository. Cart and Category" />
     <MESSAGE value="Statistics work now, 3/5 tasks done. need to clean up a bit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Statistics work now, 3/5 tasks done. need to clean up a bit." />
+    <MESSAGE value="finished product. Will do the last rapports if i got time" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished product. Will do the last rapports if i got time" />
   </component>
 </project>
