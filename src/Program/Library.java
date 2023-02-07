@@ -1,7 +1,7 @@
 package Program;
 
-import Databas.*;
-import Databas.LoadItems.*;
+import Database.*;
+import Database.LoadItems.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +36,7 @@ public class Library {
 
 
     public void refreshLists() {
-        // Refresh all lists and add customer to the right order.
+        // Refresh all lists.
         setCustomerList(customerLoader.load());
         setProductList(productLoader.load());
         setOrderList(orderLoader.load());

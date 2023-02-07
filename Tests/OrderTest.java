@@ -1,8 +1,7 @@
-import Databas.*;
-import Databas.LoadItems.*;
-import Databas.StoredProcedures.StoredProcedure;
+import Database.*;
+import Database.LoadItems.*;
+import Database.StoredProcedures.StoredProcedure;
 import Program.Library;
-import Store.ProductStore;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,8 +1,8 @@
 package Store;
 
-import Databas.Cart;
-import Databas.Order;
-import Databas.Product;
+import Database.Cart;
+import Database.Order;
+import Database.Product;
 import Program.Library;
 
 import java.util.*;
@@ -34,6 +34,8 @@ public class StatisticsStore {
  */
 
     public void filterListByCart(String searchValue, StatisticsSearcher ss) {
+        // Higher function, different outcome depending on String input and the use of the interface StatisticsSearcher
+
         List<Cart> filteredList = lib.getCartList().stream().filter(c -> ss.search(c.getProduct(), searchValue)).toList();
         filteredList.forEach(c ->
                 System.out.println(c.productData() + c.customerData()));
@@ -44,12 +46,8 @@ public class StatisticsStore {
 
     public void runStatistics(int choice) {
 
-
-        // TODO Choice 0 = exit
-
-        // refresh
+        // refresh all lists from database
         lib.refreshLists();
-
 
         switch (choice) {
 
@@ -103,9 +101,6 @@ public class StatisticsStore {
                 Map<Integer, Long> countForProductId = cartList.stream()
                         .collect(Collectors.groupingBy(Cart::getProductId, Collectors.counting()));
 
-                System.out.println("KEY SET " + countForProductId.keySet());
-                System.out.println(countForProductId);
-
                 List<Product> productList = lib.getProductList();
 
                 productList.sort(new Comparator<Product>() {
@@ -123,9 +118,7 @@ public class StatisticsStore {
 
                 lib.getProductList().forEach(c -> {
                     System.out.println(c.productData() + "Sold: " + countForProductId.get(c.getId()) + " Times");
-
                 });
-
             }
             case 0 -> {
                 System.exit(0);
@@ -135,31 +128,6 @@ public class StatisticsStore {
                 System.out.println("invalid choice");
             }
         }
-
-
-        //3. En rapport som listar alla kunder och hur mycket pengar varje kund, sammanlagt, har
-        //beställt för. Skriv ut varje kunds namn och summa.
-
-        //4. En rapport som listar beställningsvärde per ort. Skriv ut orternas namn och summa.
-
-        //5. En topplista över de mest sålda produkterna som listar varje modell och hur många ex som
-        //har sålts av den modellen. Skriv ut namn på modellen och hur många ex som sålts.
-
-/*
-            // Så många som sålts av en produkt
-            System.out.println("UPPGIFT 5");
-            filterList = lib.getCartList();
-
-            // TODO LÖSNINGEN!! ANTALET SÅLDA PER CART
-
-            Map<Integer, Long> countForProductId = filterList.stream()
-                    .collect(Collectors.groupingBy(Cart::getProductId, Collectors.counting()));
-
-            System.out.println("KEY SET " + countForProductId.keySet());
-            System.out.println(countForProductId);
-
- */
-
 
     }
 

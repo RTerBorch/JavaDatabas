@@ -1,6 +1,6 @@
 package Program;
 
-import Databas.Customer;
+import Database.Customer;
 
 import java.util.List;
 import java.util.Scanner;
@@ -32,30 +32,16 @@ public class CustomerHandler {
     }
 
 
+    public Customer welcomeCustomer(List<Customer> customerList) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public Customer welcomeCustomer(List<Customer> customerList){
-
-      if(!test)  System.out.println("Welcome to the Shoeshop! \nplease login");
+        if (!test) System.out.println("Welcome to the Shoeshop! \nplease login");
         while (!loggedIn) {
 
             activeCustomer = logIn(customerList);
             if (activeCustomer != null) {
+                //Set customer as logged in if activeCustomer is returned from logIn.
                 if (activeCustomer.getLoggedIn()) loggedIn = true;
-               if(!test) System.out.println("Welcome " + activeCustomer.getFirstName());
+                if (!test) System.out.println("Welcome " + activeCustomer.getFirstName());
             }
         }
 

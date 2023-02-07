@@ -1,6 +1,6 @@
-package Databas.LoadItems;
+package Database.LoadItems;
 
-import Databas.Category;
+import Database.Category;
 
 import java.io.FileInputStream;
 import java.io.IOException;

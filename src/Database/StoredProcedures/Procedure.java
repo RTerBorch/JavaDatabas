@@ -1,7 +1,7 @@
-package Databas.StoredProcedures;
+package Database.StoredProcedures;
 
-import Databas.Customer;
-import Databas.Product;
+import Database.Customer;
+import Database.Product;
 
 public interface Procedure {
     void addToCart(int orderId, Customer customer, Product product);

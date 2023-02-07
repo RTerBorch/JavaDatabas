@@ -1,5 +1,4 @@
-import Databas.*;
-import Databas.LoadItems.CustomerLoader;
+import Database.*;
 import Program.CustomerHandler;
 import org.junit.Test;
 

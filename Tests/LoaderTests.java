@@ -1,8 +1,8 @@
-import Databas.*;
-import Databas.LoadItems.CartLoader;
-import Databas.LoadItems.CategoryLoader;
-import Databas.LoadItems.CustomerLoader;
-import Databas.LoadItems.DataLoader;
+import Database.*;
+import Database.LoadItems.CartLoader;
+import Database.LoadItems.CategoryLoader;
+import Database.LoadItems.CustomerLoader;
+import Database.LoadItems.DataLoader;
 import org.junit.Test;
 
 import java.util.ArrayList;

@@ -1,10 +1,10 @@
 package Store;
 
-import Databas.Customer;
-import Databas.Order;
-import Databas.Product;
+import Database.Customer;
+import Database.Order;
+import Database.Product;
 
-import Databas.StoredProcedures.StoredProcedure;
+import Database.StoredProcedures.StoredProcedure;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,6 @@ public class ProductStore {
     public void generateStore(List<Product> productList) {
         Formater formater = new Formater();
 
-
         // Generate rowNr for everyProduct that's not their databaseId. Skip items with 0 in stock.
         final int[] rowNr = {1};
         filteredProductList = productList.stream().filter(e -> e.getQuantity() > 0).toList();
@@ -58,8 +57,10 @@ public class ProductStore {
 
     }
 
-
     public int generateOrderNr(List<Order> orderList) {
+        // This method will look for a match with orders, otherwise generate a new order with the number above last found
+        // if empty.
+
 
         boolean match = true;
         int orderNr = 1;
@@ -75,33 +76,30 @@ public class ProductStore {
             if (match) {
                 orderNr++;
             }
-            if (!match) {
-                System.out.println("gen order nr Sista nr är " + orderNr);
-            }
         }
 
         return orderNr;
     }
 
     public void shopItem(int choice, Customer activeCustomer, List<Product> productList, List<Order> orderList) {
-        // rowNr = choice
 
         // Filter item from productList where chosen item then get this item as chosenProduct.
         List<Product> filteredList = productList.stream().filter(e -> e.getRowNr() == choice).toList();
         Product chosenProduct = filteredList.get(0);
 
-        if (!test) { // If not test, ask how many to buy
+        if (!test) {
+            // If not test, ask how many to buy
             System.out.println(chosenProduct.getProductName() + " Size" + chosenProduct.getSize() + " Color:" + chosenProduct.getColor());
             System.out.println("How many would you like to order? there is currently " + chosenProduct.getQuantity() + " left in stock.");
         }
         int orderAmount;
         while (true) {
 
-            // If order amount is wrong the customer must write another amount.
-
+            // Order amount input
             if (test) orderAmount = 5;
             else orderAmount = scanner.nextInt();
 
+            // If order amount is wrong the customer must write another amount.
             if (orderAmount <= chosenProduct.getQuantity() && orderAmount >= 1) {
                 break;
             } else {
@@ -112,12 +110,15 @@ public class ProductStore {
         }
 
 
-        // Runs the order as many times as the chosen amount to purchase
+        // Generate orderNumber
         int activeOrderNr = generateOrderNr(orderList);
 
+        // Class that runs stored procedures
         StoredProcedure sp = new StoredProcedure();
 
         if (!test) System.out.println("You have registered " + orderAmount + " " + chosenProduct.getProductName());
+
+        // Runs the order as many times as the chosen amount to purchase
         for (int i = 0; i < orderAmount; i++) {
             // AddToCart
             sp.addToCart(activeOrderNr,activeCustomer,chosenProduct);

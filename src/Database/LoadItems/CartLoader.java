@@ -1,6 +1,6 @@
-package Databas.LoadItems;
+package Database.LoadItems;
 
-import Databas.Order;
+import Database.Cart;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class OrderLoader implements Loadable {
 
+public class CartLoader implements Loadable<Cart> {
     final Properties p = new Properties();
-
     @Override
-    public List<Order> load() {
-        List<Order> orderList = new ArrayList<>();
+    public List<Cart> load() {
+        List<Cart> cartList = new ArrayList<>();
 
         try {
             p.load(new FileInputStream("src/settings.properties"));
@@ -28,22 +27,20 @@ public class OrderLoader implements Loadable {
                 p.getProperty("name"),
                 p.getProperty("password"));
              Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery("select orders.id, customerId, purchaseDate from orders")) {
-
+             ResultSet rs = stmt.executeQuery("SELECT id, orderId, productId FROM cart")) {
 
             while (rs.next()) {
                 int id = rs.getInt("id");
-                int customerId = rs.getInt("customerId");
-                Timestamp purchaseDate = rs.getTimestamp("purchaseDate");
-                Order order = new Order(id, customerId, purchaseDate);
-                orderList.add(order);
+                int orderId = rs.getInt("orderId");
+                int productId = rs.getInt("productId");
+                Cart cart = new Cart(id, orderId, productId);
+                cartList.add(cart);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return orderList;
+
+        return cartList;
     }
-
 }
-
 

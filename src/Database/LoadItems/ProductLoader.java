@@ -1,6 +1,6 @@
-package Databas.LoadItems;
+package Database.LoadItems;
 
-import Databas.Product;
+import Database.Product;
 
 import java.io.FileInputStream;
 import java.io.IOException;

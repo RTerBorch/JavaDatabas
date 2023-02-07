@@ -1,8 +1,7 @@
-package Databas.StoredProcedures;
+package Database.StoredProcedures;
 
-import Databas.Customer;
-import Databas.Product;
-import Databas.Repository;
+import Database.Customer;
+import Database.Product;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,6 +1,6 @@
 package Store;
 
-import Databas.Product;
+import Database.Product;
 
 @FunctionalInterface
 public interface StatisticsSearcher {

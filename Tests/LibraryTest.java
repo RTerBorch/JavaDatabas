@@ -1,11 +1,4 @@
-import Databas.*;
-import Program.Library;
 import org.junit.Test;
-
-import java.sql.Timestamp;
-import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
 
 public class LibraryTest {
 

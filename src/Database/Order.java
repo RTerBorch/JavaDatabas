@@ -1,4 +1,4 @@
-package Databas;
+package Database;
 
 import java.sql.Timestamp;
 

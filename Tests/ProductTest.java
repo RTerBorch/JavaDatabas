@@ -1,7 +1,7 @@
-import Databas.Category;
-import Databas.LoadItems.CategoryLoader;
-import Databas.LoadItems.ProductLoader;
-import Databas.Product;
+import Database.Category;
+import Database.LoadItems.CategoryLoader;
+import Database.LoadItems.ProductLoader;
+import Database.Product;
 import Store.ProductStore;
 import org.junit.Test;
 
